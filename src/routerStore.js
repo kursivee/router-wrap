@@ -1,12 +1,12 @@
 let routers = [];
 
-export function push(path, router) {
+module.exports.push = function(path, router) {
     routers.push({
         path: path,
         router: router
     });
 }
 
-export function getRouters() {
+module.exports.getRouters = function() {
     return routers;
 }
