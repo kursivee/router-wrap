@@ -1,11 +1,12 @@
-const routerStore = require('routerStore');
+const routerStore = require('./routerStore');
 
-export function register(path, router) {
+exports.register = function (path, router) {
+    console.log('register');
     routerStore.push(path, router);
 }
 
-export function connect(app) {
+exports.connect = function (app) {
     routerStore.getRouters().forEach((router) => {
         app.use(router.path, router.router);
-    });
+});
 }
